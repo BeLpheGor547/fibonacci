@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script >
+            function fibonacci(entrada){
+    limpiar();
+    /*
+    *manejo de la secuencia
+    *a valor actual
+    *b valor nuevo 
+    *c valor siguiente
+    */
+
+    var a= 0;
+    var b=1;
+    var c=null;
+
+    var noMaxElements=100;
+    var ElementosSerie = entrada.value;
+    //Validar entrada
+    if(ElementosSerie >noMaxElements){
+        imprimir("Debes probar con menos de  100 elemntos");
+        return;
+    
+    //realizar la siguiente iteracion
+    }
+    imprimir(a);
+    imprimir(b);
+    for(i=0; i<ElementosSerie -2 ;i++){
+        c=a+b;
+        a=b;
+        b=c;
+        imprimir(c);
+
+    }
+}
+
+function imprimir(valor){
+    document.getElementById("resultado").innerHTML+=valor+' ';
+
+}
+
+function limpiar(){
+    document.getElementById("resultado").innerHTML=' ';
+}
+
+        </script>
+    
+    </head>
+    <body>
+        <h1>Programa de  Sucesion de fibonacci</h1>
+    <label>Proporciona un numero de elementos</label>
+     <input type="text" onchange="fibonacci(this);"/>
+
+
+<br>
+<div id="resultado" style="color:red"> </div>
+
+          </body>
+</html>
